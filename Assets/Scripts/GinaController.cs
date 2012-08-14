@@ -5,6 +5,7 @@ using SmoothMoves;
 public class GinaController : MonoBehaviour {
 	
 	public BoneAnimation gina;
+	public float velocity;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,12 +18,41 @@ public class GinaController : MonoBehaviour {
 		{
 			Debug.Log("RIGHT ARROW DOWN");
 			gina.CrossFade("Gina left punch");
+			transform.forward = new Vector3(0f, 0f, 1f);
+			rigidbody.velocity = new Vector3(velocity, 0f, 0f);
 		}
 		if( Input.GetKeyUp(KeyCode.RightArrow) )
 		{
 			gina["Gina idle"].speed = Random.Range(0.2f, 1.8f);
 			Debug.Log("RIGHT ARROW UP");
 			gina.CrossFade("Gina idle");
+			rigidbody.velocity = new Vector3(0f, 0f, 0f);
+		}
+		
+		if( Input.GetKeyDown(KeyCode.LeftArrow) )
+		{
+			Debug.Log("LEFT ARROW DOWN");
+			gina.CrossFade("Gina left punch");
+			transform.forward = new Vector3(0f, 0f, -1f);
+			rigidbody.velocity = new Vector3(-velocity, 0f, 0f);
+		}
+		if( Input.GetKeyUp(KeyCode.LeftArrow) )
+		{
+			gina["Gina idle"].speed = Random.Range(0.2f, 1.8f);
+			Debug.Log("LEFT ARROW UP");
+			gina.CrossFade("Gina idle");
+			rigidbody.velocity = new Vector3(0f, 0f, 0f);
+		}
+		
+		
+		
+	}
+	
+		void FixedUpdate ()
+	{
+		//if (touchingPlatform) 
+		{
+			//rigidbody.AddForce (velocity, 0f, 0f, ForceMode.VelocityChange);
 		}
 	}
 }
