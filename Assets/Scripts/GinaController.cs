@@ -10,6 +10,7 @@ public class GinaController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gina = gameObject.GetComponent<BoneAnimation>();
+		gina.RegisterUserTriggerDelegate(testUserTrigger);
 	}
 	
 	// Update is called once per frame
@@ -53,6 +54,14 @@ public class GinaController : MonoBehaviour {
 		//if (touchingPlatform) 
 		{
 			//rigidbody.AddForce (velocity, 0f, 0f, ForceMode.VelocityChange);
+		}
+	}
+	
+	public void testUserTrigger(UserTriggerEvent triggerEvent)
+	{
+		if( triggerEvent.boneName == "Bras a g")
+		{
+			Debug.Log("UserTrigger Triggered");
 		}
 	}
 }
