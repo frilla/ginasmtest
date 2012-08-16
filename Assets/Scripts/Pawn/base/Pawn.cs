@@ -7,12 +7,14 @@ public class Pawn : MonoBehaviour {
 	public bool isEnemy;
 
 	// Use this for initialization
-	protected virtual void Start () {
+	protected virtual void Start () 
+	{
 		GameEventManager.PawnSpawned(this);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 }
