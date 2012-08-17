@@ -20,6 +20,8 @@ public class GinaController : MonoBehaviour {
 			Debug.Log("RIGHT ARROW DOWN");
 			gina.CrossFade("Gina left punch");
 			transform.forward = new Vector3(0f, 0f, 1f);
+//			transform.localScale = new Vector3(1f, 1f, 1f);
+//			Debug.Log(transform.rotation.ToString());
 			rigidbody.velocity = new Vector3(velocity, 0f, 0f);
 		}
 		if( Input.GetKeyUp(KeyCode.RightArrow) )
@@ -35,6 +37,8 @@ public class GinaController : MonoBehaviour {
 			Debug.Log("LEFT ARROW DOWN");
 			gina.CrossFade("Gina left punch");
 			transform.forward = new Vector3(0f, 0f, -1f);
+//			transform.localScale = new Vector3(-1f, 1f, 1f);
+//			Debug.Log(transform.rotation.ToString());
 			rigidbody.velocity = new Vector3(-velocity, 0f, 0f);
 		}
 		if( Input.GetKeyUp(KeyCode.LeftArrow) )
@@ -61,7 +65,7 @@ public class GinaController : MonoBehaviour {
 	{
 		if( triggerEvent.boneName == "Bras a g")
 		{
-			Debug.Log("UserTrigger Triggered");
+//			Debug.Log("UserTrigger Triggered");
 		}
 	}
 }

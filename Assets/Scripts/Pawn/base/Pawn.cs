@@ -17,4 +17,16 @@ public class Pawn : MonoBehaviour {
 	{
 	
 	}
+	
+	public void facePoint(Vector3 point)
+	{
+		if( point.x > transform.localPosition.x )
+		{
+			transform.forward = new Vector3(0f, 0f, 1f);
+		}
+		else
+		{
+			transform.forward = new Vector3(0f, 0f, -1f);
+		}
+	}
 }
