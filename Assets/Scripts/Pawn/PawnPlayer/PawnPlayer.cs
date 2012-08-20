@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class PawnPlayer : Pawn {
+public class PawnPlayer : Pawn 
+{
 
 	// Use this for initialization
 	protected override void Start () 
@@ -11,7 +12,8 @@ public class PawnPlayer : Pawn {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	protected override void Update () 
+	{
+		base.Update();
 	}
 }

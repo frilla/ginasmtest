@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class PawnAI : Pawn {
+public class PawnAI : Pawn 
+{
 	
 	public Color MeshColor;
 
@@ -15,8 +16,9 @@ public class PawnAI : Pawn {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	protected override void Update () 
 	{
+		base.Update();
 		facePoint( new Vector3(0f, 0f, 0f) );
 	}
 }

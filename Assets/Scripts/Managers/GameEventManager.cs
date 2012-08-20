@@ -9,7 +9,11 @@ public static class GameEventManager {
 	
 	public delegate void PawnEvent(Pawn pawn);
 	
-	public static event PawnEvent OnPawnSpawned, OnPawnDestroyed;
+	public static event PawnEvent OnPawnSpawned, OnPawnDestroyed, OnCurrentEnemySet, OnCurrentEnemyUnset;
+	
+	public delegate void GameObjectEvent( GameObject gameObject );
+	
+	public static event GameObjectEvent OnGameObjectSpawned, OnGameObjectDestroyed;
 	
 	public static void TriggerGameStart(){
 		if( GameStart != null ){
@@ -36,6 +40,22 @@ public static class GameEventManager {
 		if( OnPawnDestroyed != null )
 		{
 			OnPawnDestroyed(pawn); 
+		}
+	}
+	
+	public static void CurrentEnemySet(Pawn pawn)
+	{
+		if( OnCurrentEnemySet != null )
+		{
+			OnCurrentEnemySet(pawn);
+		}
+	}
+	
+	public static void CurrentEnemyUnset(Pawn pawn)
+	{
+		if( OnCurrentEnemyUnset != null )
+		{
+			OnCurrentEnemyUnset(pawn);
 		}
 	}
 }
