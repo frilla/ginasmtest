@@ -9,7 +9,10 @@ public static class GameEventManager {
 	
 	public delegate void PawnEvent(Pawn pawn);
 	
-	public static event PawnEvent OnPawnSpawned, OnPawnDestroyed, OnCurrentEnemySet, OnCurrentEnemyUnset;
+	public static event PawnEvent 	OnPawnSpawned, OnPawnDestroyed, 
+									OnCurrentEnemySet, OnCurrentEnemyUnset, 
+									OnAttackStateStart, OnAttackStateEnd,
+									OnPawndead;
 	
 	public delegate void GameObjectEvent( GameObject gameObject );
 	
@@ -56,6 +59,30 @@ public static class GameEventManager {
 		if( OnCurrentEnemyUnset != null )
 		{
 			OnCurrentEnemyUnset(pawn);
+		}
+	}
+	
+	public static void AttackStateStart(Pawn pawn)
+	{
+		if( OnAttackStateStart != null )
+		{
+			OnAttackStateStart(pawn);
+		}
+	}
+	
+	public static void AttackStateEnd(Pawn pawn)
+	{
+		if( OnAttackStateEnd != null )
+		{
+			OnAttackStateEnd(pawn);
+		}
+	}
+	
+	public static void PawnDead(Pawn pawn)
+	{
+		if( OnPawndead != null )
+		{
+			OnPawndead(pawn);
 		}
 	}
 }
