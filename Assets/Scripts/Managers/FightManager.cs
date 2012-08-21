@@ -15,7 +15,7 @@ public class FightManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		Instantiate(Resources.Load("Gina"));
+		Instantiate(Resources.Load("Lambda"));
 	}
 	
 	// Update is called once per frame
